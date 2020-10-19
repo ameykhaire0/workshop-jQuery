@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  const btnId = ["btn1", "btn2", "btn3"];
   const color = ["red", "yellow", "orange"];
   $(".btn").each(function (i) {
     $(this).click(function () {
