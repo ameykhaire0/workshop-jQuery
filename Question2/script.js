@@ -3,17 +3,19 @@ $(document).ready(() => {
     url: "https://jsonplaceholder.typicode.com/users",
     method: "GET",
     success: (resp) => {
+      $("#mytable").append("<tbody>");
       resp.forEach((ele) => {
-        let res = "<tbody><tr>";
-        res += `<td>${ele.id}</td>`;
-        res += `<td>${ele.name}</td>`;
-        res += `<td>${ele.username}</td>`;
-        res += `<td>${ele.email}</td>`;
-        res += `<td>${ele.phone}</td>`;
-        res += `<td>${ele.website}</td>`;
-        res += "</tr></tbody>";
-        $("#mytable").append(res);
+        let row = "<tr>";
+        row += `<td>${ele.id}</td>`;
+        row += `<td>${ele.name}</td>`;
+        row += `<td>${ele.username}</td>`;
+        row += `<td>${ele.email}</td>`;
+        row += `<td>${ele.phone}</td>`;
+        row += `<td>${ele.website}</td>`;
+        row += "</tr>";
+        $("#mytable").append(row);
       });
+      $("#mytable").append("</tbody>");
     },
     error: (err) => {
       console.log(err);
