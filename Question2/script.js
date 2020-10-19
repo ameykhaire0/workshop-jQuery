@@ -12,16 +12,13 @@ $(document).ready(() => {
         res += `<td>${ele.phone}</td>`;
         res += `<td>${ele.website}</td>`;
         res += "</tr></tbody>";
-        console.log(res);
         $("#mytable").append(res);
       });
     },
     error: (err) => {
       console.log(err);
     },
+    async: false,
   });
-
-  $("#mybtn").click(() => {
-    $("#mytable").DataTable();
-  });
+  $("#mytable").DataTable();
 });
