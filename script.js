@@ -1,11 +1,10 @@
 $(document).ready(() => {
   const color = ["red", "yellow", "orange"];
   $(".btn").each(function (i) {
+    if (i === 3) return;
     $(this).click(function () {
       $(".ball").each(function () {
-        if (!$(this).hasClass(color[i])) {
-          $(this).hide();
-        }
+        $(this).hasClass(color[i]) ? $(this).show() : $(this).hide();
       });
       $(".green").removeClass("green");
       $(this).addClass("green");
